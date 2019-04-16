@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
 import { login } from '../actions'
+import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 
 
@@ -24,8 +25,9 @@ class Login extends Component {
 
     login = e => {
         e.preventDefault();
+
         this.props.login(this.state.credentials);
-        console.log(this.props.loggingIn)
+       
     }
 
 
@@ -33,7 +35,7 @@ class Login extends Component {
         return(
             <div className='Login-Form'>
                 <form onSubmit={this.login}>
-                    <label for="username>">Account</label>
+                    <label htmlFor="username>">Account</label>
                     <input 
                         type="text"
                         name='username'
@@ -43,7 +45,7 @@ class Login extends Component {
                     
                     />
 
-                    <label for="username>">Password</label>
+                    <label htmlFor="password>">Password</label>
                     <input 
                         type="password"
                         name='password'

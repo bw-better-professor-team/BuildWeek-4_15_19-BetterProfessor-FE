@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import { createAccount } from '../actions'
+import axios from 'axios';
+import { accountCreation } from '../actions'
 import { Route, Link } from 'react-router-dom';
 
 
 class CreateAccount extends Component {
     state = {
         new_credentials: {
-            new_username: '',
-            new_password: '',
+            username: '',
+            password: '',
         }
     };
 
@@ -22,9 +23,11 @@ class CreateAccount extends Component {
         })
     };
 
-    login = e => {
+    accountCreation = e => {
         e.preventDefault();
-        // this.props.login(this.state.new_credentials);
+        // axios.post('https://betterprofessor.herokuapp.com/api/register', this.state.new_credentials)
+        this.props.accountCreation(this.state.new_credentials);
+
         // console.log(this.props.loggingIn)
     }
 
@@ -32,13 +35,13 @@ class CreateAccount extends Component {
     render() {
         return(
             <div className='Login-Form'>
-                <form onSubmit={this.login}>
+                <form onSubmit={this.accountCreation}>
                     <label for="username>">Account</label>
                     <input 
                         type="text"
-                        name='new_username'
+                        name='username'
                         placeholder="Username"
-                        value={this.state.new_credentials.new_username}
+                        value={this.state.new_credentials.username}
                         onChange={this.handleChange}
                     
                     />
@@ -46,9 +49,9 @@ class CreateAccount extends Component {
                     <label for="username>">Password</label>
                     <input 
                         type="password"
-                        name='new_password'
+                        name='password'
                         placeholder=" "
-                        value={this.state.new_credentials.new_password}
+                        value={this.state.new_credentials.password}
                         onChange={this.handleChange}
                     
                     />
@@ -56,14 +59,16 @@ class CreateAccount extends Component {
                     {this.props.error && <p className='Error'>{this.props.error}</p>}
 
                     <button>
-                        {this.props.loggingIn ? (
+                        {this.props.creatingAccount ? (
                             // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
                             'Loading...'
                         ) : (
-                            'Login'
+                            'Create Account'
                         )}
                         
                     </button>
+
+                    <Link to="login">Back to Login</Link>
 
                 
                 </form>
@@ -78,10 +83,12 @@ class CreateAccount extends Component {
 const mapStateToProps = (state) => {
     return{
         error: state.loginReducer.loginError,
-        loggingIn: state.loginReducer.loggingIn
+        loggingIn: state.loginReducer.loggingIn,
+        creatingAccount: state.loginReducer.creatingAccount,
     }
 }
 
 export default connect(
     mapStateToProps,
+    { accountCreation }
 )(CreateAccount)
