@@ -21,7 +21,8 @@ export const login = creds => dispatch => {
 
 export const accountCreation = creds => dispatch => {
     dispatch({ type:CREATE_ACCOUNT_START });
-    axios.post('https://betterprofessor.herokuapp.com/api/register', creds)
+    return axios.post('https://betterprofessor.herokuapp.com/api/register', creds)
+
     .then(res => {
         console.log(res)
         dispatch({ type: CREATE_ACCOUNT_SUCCESS, payload: res.data.payload })

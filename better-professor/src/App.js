@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Login from './components/Login';
 import StudentList from './components/StudentList';
 import CreateAccount from './components/CreateAccount';
@@ -34,6 +34,7 @@ function App() {
         <Route path='/login' component={Login} />
         <Route exact path='/create-account' component={CreateAccount} />
         <Route exact path='/student-list' component={StudentList} />
+        <Redirect from="/" to="/login" />
       </div>
     </Router>
   )
