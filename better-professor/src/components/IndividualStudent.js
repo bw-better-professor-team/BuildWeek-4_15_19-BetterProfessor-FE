@@ -20,11 +20,11 @@ class IndividualStudent extends Component {
             <h5>{this.props.student.projects}</h5>
             <h5>{this.props.student.date}</h5>
             <button>
-            This Button will be to Select the student
+            Set a Reminder to Yourself
 
             </button>
             <button>
-            This Button will be to Send a Message
+            Set a Reminder to the Student
 
             </button>
             

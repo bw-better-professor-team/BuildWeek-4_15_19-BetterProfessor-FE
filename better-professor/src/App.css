@@ -204,3 +204,25 @@ span {
     align-items: center;
     flex-direction: column;
   }
+
+  .Student-List-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Student-List-Individual-Wrapper {
+    /* background-color: white; */
+    width: 90%;
+  }
+
+  .Individual-Student-Wrapper {
+    border: 1px solid red;
+    background-color: white;
+    margin: 0 0 15px;
+    border-radius: 16px;
+    padding: 0 0 15px;
+  }
+  .Individual-Student-Wrapper button {
+    margin: 0 5px 15px;
+  }
