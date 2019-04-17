@@ -16,7 +16,7 @@ class Home extends Component {
 
                     <div className='Home-Page-Links'>
 
-                        <Link className= "Home-Link" to="login">Login Here!</Link>
+                        <Link className= "Home-Link" to="login">Login or Create Account</Link>
 
                         <h3>Already Logged In? </h3>
 

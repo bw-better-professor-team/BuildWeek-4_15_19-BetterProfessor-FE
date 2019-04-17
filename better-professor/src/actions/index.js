@@ -11,7 +11,7 @@ export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS'
 
 export const login = creds => dispatch => {
     dispatch({ type: LOGIN_START });
-    axios.post('https://betterprofessor.herokuapp.com/api/login', creds)
+    return axios.post('https://betterprofessor.herokuapp.com/api/login', creds)
     .then(res => {
         localStorage.setItem('token',  res.data.token)
         dispatch({ type: LOGIN_SUCCESS, payload: res.data.token})
