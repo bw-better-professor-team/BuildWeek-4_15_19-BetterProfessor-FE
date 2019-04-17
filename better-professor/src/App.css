@@ -8,7 +8,7 @@
   pointer-events: none;
 }
 
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -31,3 +31,170 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300i,400,500,700,900');
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+  color: black;
+  font-family: 'Rubik', sans-serif;
+
+}
+
+
+
+.task.completed {
+    color: #9c8249;
+    text-decoration: line-through;
+    font-weight: 300;
+    font-style: italic
+  }
+
+  .task {
+      color: #e3dfe3;
+      font-size: 30px;
+      padding: 3px 0;
+      font-weight: 400;
+  }
+
+  .to-Do-Wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      height: 10000px;
+      margin: 0;
+      padding: 30px 0 0;
+      background-color:  #282c34;
+  }
+
+  h2 {
+      font-size: 47px;
+      font-weight: 500;
+  }
+
+
+  .to-Do-List-Div {
+      width: 625px;
+      margin-left: 154px;
+      
+
+  }
+
+  .to-Do-Form-Div {
+      padding: 25px 0 0;
+      margin: 30px 0 0;
+  }
+  ul {
+    list-style-type: none;
+  }
+
+  input {
+    background-color: white;
+    border: 0;
+    padding: 10px 0;
+    font-size: 23px;
+    width: 240px;
+    outline: 0;
+    color: #282c34;
+    border-bottom: 2px solid #87849f;
+    margin-right: 8px;
+  }
+  button {
+      background-color: orangered;
+      height: 20px;
+      margin: 0 15px;
+      padding: 20px 15px 35px;;
+      color: white;
+      border: 4px solid orangered;
+      border-radius: 8px;
+      line-height: 15px;
+      font-size: 20px;
+      width: 350px;
+      transition: 0.3s;
+      
+  }
+  button:hover {
+    background-color: white;
+    height: 20px;
+    margin: 0 15px;
+    padding: 20px 15px 35px;;
+    color: orangered;
+    border: 4px solid orangered;
+    border-radius: 8px;
+    line-height: 15px;
+    font-size: 23px;
+    width: 350px;
+    cursor: pointer;
+    
+}
+
+  .Login-Form {
+    display: flex;
+    background-color: white;
+    padding: 0 60px 100px;
+    border-radius: 16px;
+
+  }
+  .Login-Form label {
+    padding: 15px;
+    color: #282c34;
+  }
+
+  .Username-Wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    width: 420px;
+  }
+  .Password-Wrapper {
+    display: flex;
+    vertical-align: bottom;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 15px 0 30px;
+    width: 420px;
+  }
+  
+
+  .Link {
+    color: #282c34;
+    text-decoration: none;
+    padding: 20px 0 0;
+    font-size: 16px;
+    border: 2px solid #282c34;
+    width: 350px;
+    border-radius: 8px;
+    height: 30px;
+    line-height: 15px;
+    transition: 0.3s;
+    margin: 20px 0 0;
+  }
+
+  .Link:hover {
+    font-size: 18px;
+  }
+  
+  .Login-Button-And-Link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

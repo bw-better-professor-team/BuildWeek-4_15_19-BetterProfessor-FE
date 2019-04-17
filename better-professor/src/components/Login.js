@@ -35,40 +35,46 @@ class Login extends Component {
         return(
             <div className='Login-Form'>
                 <form onSubmit={this.login}>
-                    <label htmlFor="username>">Account</label>
-                    <input 
-                        type="text"
-                        name='username'
-                        placeholder="Username"
-                        value={this.state.credentials.username}
-                        onChange={this.handleChange}
-                    
-                    />
+                <h2>Login Now</h2>
 
-                    <label htmlFor="password>">Password</label>
-                    <input 
-                        type="password"
-                        name='password'
-                        placeholder=" "
-                        value={this.state.credentials.password}
-                        onChange={this.handleChange}
-                    
-                    />
+                    <div className='Username-Wrapper'>
+                        <label htmlFor="username>">Account</label>
+                        <input 
+                            type="text"
+                            name='username'
+                            placeholder="Username"
+                            value={this.state.credentials.username}
+                            onChange={this.handleChange}
+                        
+                        />
+                    </div>
+                    <div className='Password-Wrapper'>
+                        <label htmlFor="password>">Password</label>
+                        <input 
+                            type="password"
+                            name='password'
+                            placeholder="   - "
+                            value={this.state.credentials.password}
+                            onChange={this.handleChange}
+                        
+                        />
+                    </div>
                     <div className="Login-Error-Spacer" />
                     {this.props.error && <p className='Error'>{this.props.error}</p>}
 
-                    <button>
-                        {this.props.loggingIn ? (
-                            // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
-                            'Loading...'
-                        ) : (
-                            'Login'
-                        )}
-                        
-                    </button>
+                    <div className='Login-Button-And-Link'>
+                        <button>
+                            {this.props.loggingIn ? (
+                                // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
+                                'Loading...'
+                            ) : (
+                                'Login'
+                            )}
+                            
+                        </button>
 
-                    <Link to="create-account">Create An Account</Link>
-                
+                        <Link className= "Link" to="create-account">Create An Account</Link>
+                    </div>
                 </form>
             
             </div>
