@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import Login from './components/Login';
 import StudentList from './components/StudentList';
 import CreateAccount from './components/CreateAccount';
+import Home from './components/Home';
 
 // class App extends Component {
 //   render() {
@@ -31,10 +32,10 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Route path='/login' component={Login} />
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/login' component={Login} />
         <Route exact path='/create-account' component={CreateAccount} />
         <Route exact path='/student-list' component={StudentList} />
-        {/* <Redirect from="/" to="/login" /> */}
       </div>
     </Router>
   )
