@@ -34,7 +34,7 @@ function App() {
         <Route path='/login' component={Login} />
         <Route exact path='/create-account' component={CreateAccount} />
         <Route exact path='/student-list' component={StudentList} />
-        <Redirect from="/" to="/login" />
+        {/* <Redirect from="/" to="/login" /> */}
       </div>
     </Router>
   )
