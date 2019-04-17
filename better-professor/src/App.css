@@ -117,7 +117,42 @@ span {
     border-bottom: 2px solid #87849f;
     margin-right: 8px;
   }
-  button {
+
+  .Home-Form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0 60px 100px;
+    border-radius: 16px;
+  }
+
+  .Home-Page-Links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Home-Page-Links h3{
+    padding: 0;
+    margin: 30px 0 10px;
+  }
+
+  .Home-Link{
+    background-color: orangered;
+    height: 15px;
+    margin: 0 15px;
+    padding: 20px 15px 35px;;
+    color: white;
+    border: 4px solid orangered;
+    border-radius: 8px;
+    /* line-height: 15px; */
+    font-size: 20px;
+    width: 300px;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+
+  .Login-Button-And-Link button {
       background-color: orangered;
       height: 20px;
       margin: 0 15px;
@@ -131,7 +166,7 @@ span {
       transition: 0.3s;
       
   }
-  button:hover {
+  .Login-Button-And-Link button:hover {
     background-color: white;
     height: 20px;
     margin: 0 15px;
@@ -209,6 +244,23 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .Student-List-Title {
+    color: orangered;
+  }
+
+  .Student-List-Header{
+    background-color: white;
+    margin: 15px 0;
+  }
+
+  .Student-List-Form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    align-items: center;
+    border-radius: 16px;
   }
 
   .Student-List-Individual-Wrapper {

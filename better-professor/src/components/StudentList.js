@@ -30,51 +30,53 @@ class StudentList extends Component {
     render () {
         return (
             <div className='Student-List-Wrapper'>
-            <h1>
-                This is my Student List
-                
-            </h1>
-            <h2>
-                Add a Student Here:
-                <form onSubmit={this.submitStudent}>
-                    {/* <label for="name>">Name</label> */}
-                    <input 
-                        type="text"
-                        name='name'
-                        placeholder="Name"
-                        value={this.state.new_student.name}
-                        onChange={this.handleChange}
-                    
-                    />
-
-                    {/* <label for="projects>">Password</label> */}
-                    <input 
-                        type="text"
-                        name='projects'
-                        placeholder="Projects"
-                        value={this.state.new_student.projects}
-                        onChange={this.handleChange}
-                    />
-                    <button>
-                        {this.props.addingStudent ? (
-                            // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
-                            'Adding...'
-                        ) : (
-                            'Submit Student'
-                        )}
+                    <h1 className='Student-List-Title'>
+                        Your Student List
                         
-                    </button>
-                </form>
-            </h2>
-            
-                <div className='Student-List-Individual-Wrapper'>
-                {this.props.students.map(studentBeingExamined =>{
-                    return (
-                        <IndividualStudent student = {studentBeingExamined} key = {studentBeingExamined.id}/>
-                    )
-                })}
+                    </h1>
+                    <div className='Student-List-Header'>
+
+                    <h3>
+                        Add a Student Here:
+                        <form className= 'Student-List-Form' onSubmit={this.submitStudent}>
+                            {/* <label for="name>">Name</label> */}
+                            <input 
+                                type="text"
+                                name='name'
+                                placeholder="Name"
+                                value={this.state.new_student.name}
+                                onChange={this.handleChange}
+                            
+                            />
+
+                            {/* <label for="projects>">Password</label> */}
+                            <input 
+                                type="text"
+                                name='projects'
+                                placeholder="Projects"
+                                value={this.state.new_student.projects}
+                                onChange={this.handleChange}
+                            />
+                            <button>
+                                {this.props.addingStudent ? (
+                                    // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
+                                    'Adding...'
+                                ) : (
+                                    'Submit Student'
+                                )}
+                                
+                            </button>
+                        </form>
+                    </h3>
                 </div>
-            
+                <div className='Student-List-Individual-Wrapper'>
+                    {this.props.students.map(studentBeingExamined =>{
+                        return (
+                            <IndividualStudent student = {studentBeingExamined} key = {studentBeingExamined.id}/>
+                        )
+                    })}
+                 </div>
+                
             
             </div>
         )
