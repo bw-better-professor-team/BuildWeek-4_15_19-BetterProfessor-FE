@@ -26,8 +26,10 @@ class CreateAccount extends Component {
     accountCreation = e => {
         e.preventDefault();
         // axios.post('https://betterprofessor.herokuapp.com/api/register', this.state.new_credentials)
-        this.props.accountCreation(this.state.new_credentials);
-
+        this.props.accountCreation(this.state.new_credentials)
+        .then( () => 
+            this.props.history.push('/login')
+        )
         // console.log(this.props.loggingIn)
     }
 

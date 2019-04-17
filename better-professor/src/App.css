@@ -180,7 +180,7 @@ span {
     padding: 20px 0 0;
     font-size: 16px;
     border: 2px solid #282c34;
-    width: 350px;
+    width: 346px;
     border-radius: 8px;
     height: 30px;
     line-height: 15px;
@@ -189,7 +189,13 @@ span {
   }
 
   .Link:hover {
-    font-size: 18px;
+    font-size: 17px;
+    border: 3px solid #282c34;
+    height: 28px;
+    width: 344px;
+
+
+   
   }
   
   .Login-Button-And-Link {
