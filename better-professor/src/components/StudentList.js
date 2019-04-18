@@ -53,11 +53,18 @@ class StudentList extends Component {
                             <input 
                                 type="text"
                                 name='projects'
-                                placeholder="Projects"
+                                placeholder="Project"
                                 value={this.state.new_student.projects}
                                 onChange={this.handleChange}
                             />
-                            <button>
+                            <input 
+                                type="text"
+                                name='date'
+                                placeholder="Due Date"
+                                value={this.state.new_student.date}
+                                onChange={this.handleChange}
+                            />
+                            <button className='Student-List-Button'>
                                 {this.props.addingStudent ? (
                                     // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
                                     'Adding...'
@@ -70,9 +77,9 @@ class StudentList extends Component {
                     </h3>
                 </div>
                 <div className='Student-List-Individual-Wrapper'>
-                    {this.props.students.map(studentBeingExamined =>{
+                    {this.props.students.map((studentBeingExamined, arrayNumber) =>{
                         return (
-                            <IndividualStudent student = {studentBeingExamined} key = {studentBeingExamined.id}/>
+                            <IndividualStudent student = {studentBeingExamined} key = {studentBeingExamined.id} arrayNumber={arrayNumber}/>
                         )
                     })}
                  </div>

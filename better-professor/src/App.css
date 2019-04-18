@@ -106,7 +106,7 @@ span {
     list-style-type: none;
   }
 
-  input {
+  .Login-Input {
     background-color: white;
     border: 0;
     padding: 10px 0;
@@ -253,6 +253,8 @@ span {
   .Student-List-Header{
     background-color: white;
     margin: 15px 0;
+    border-radius: 16px;
+
   }
 
   .Student-List-Form {
@@ -268,13 +270,107 @@ span {
     width: 90%;
   }
 
-  .Individual-Student-Wrapper {
-    border: 1px solid red;
+  .Student-List-Button {
+    background-color: orangered;
+    height: 20px;
+    margin: 15px 15px 0;
+    padding: 20px 15px 35px;;
+    color: white;
+    border: 4px solid orangered;
+    border-radius: 8px;
+    line-height: 15px;
+    font-size: 20px;
+    width: 350px;
+    transition: 0.3s;
+      
+  }
+  .Student-List-Button:hover {
     background-color: white;
-    margin: 0 0 15px;
-    border-radius: 16px;
-    padding: 0 0 15px;
-  }
-  .Individual-Student-Wrapper button {
-    margin: 0 5px 15px;
-  }
+    height: 20px;
+    padding: 20px 15px 35px;;
+    color: orangered;
+    border: 4px solid orangered;
+    border-radius: 8px;
+    line-height: 15px;
+    font-size: 23px;
+    width: 350px;
+    cursor: pointer;
+    
+}
+
+.Student-List-Individual-Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Individual-Student-Wrapper {
+  border: 1px solid red;
+  background-color: white;
+  margin: 0 0 15px;
+  border-radius: 16px;
+  padding: 0 0 15px;
+  width: 750px;
+}
+.Individual-Student-Wrapper button {
+  margin: 0 5px 15px;
+}
+
+.Individual-Student-Wrapper input {
+  height: 100px;
+  width: 200px;  
+}
+
+.Hidden-Display {
+  display: none;
+}
+
+
+
+.Button-Show-Projects {
+  background-color: white;
+  height: 12px;
+  margin: 15px 15px 0;
+  padding: 20px 15px 29px;;
+  color: orangered;
+  border: white;
+  border-bottom: 4px solid orangered;
+  border-radius: 2px;
+  line-height: 15px;
+  font-size: 15px;
+  width: 150px;
+  transition: 0.3s;
+    
+}
+.Button-Show-Projects:hover {
+  background-color: white;
+  color: orangered;
+  border-radius: 8px;
+  line-height: 15px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.Button-Hide-Projects {
+  background-color: white;
+  height: 12px;
+  margin: 15px 15px 0;
+  padding: 20px 15px 29px;;
+  color: orangered;
+  border: white;
+  border-bottom: 4px solid orangered;
+  border-radius: 2px;
+  line-height: 15px;
+  font-size: 15px;
+  width: 150px;
+  transition: 0.3s;
+    
+}
+.Button-Hide-Projects:hover {
+  background-color: white;
+  color: orangered;
+  border-radius: 8px;
+  line-height: 15px;
+  font-size: 17px;
+  cursor: pointer;
+}

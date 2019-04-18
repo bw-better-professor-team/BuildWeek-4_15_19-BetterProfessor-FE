@@ -19,6 +19,7 @@ const initialState = {
     addingStudent: false,
     updatingStudents: false,
     deletingStudents: false,
+    creatingReminder: false,
     error: null
 
 };
@@ -29,6 +30,18 @@ export const studentListReducer = (state = initialState, action) => {
         return {
             ...state,
             addingStudent: true,
+
+        }
+        case actionTypes.CREATE_MESSAGE_START:
+        return {
+            ...state,
+            creatingReminder: true,
+
+        }
+        case actionTypes.MESSAGE_CREATED:
+        return {
+            ...state,
+            creatingReminder: false,
 
         }
         

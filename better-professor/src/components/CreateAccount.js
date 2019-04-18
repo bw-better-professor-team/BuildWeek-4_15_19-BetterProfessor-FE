@@ -42,7 +42,8 @@ class CreateAccount extends Component {
                     <div className='Username-Wrapper'>
 
                         <label for="username>">Account</label>
-                        <input 
+                        <input
+                            className = "Login-Input" 
                             type="text"
                             name='username'
                             placeholder="Username"
@@ -54,7 +55,8 @@ class CreateAccount extends Component {
                     <div className='Password-Wrapper'>
 
                         <label for="username>">Password</label>
-                        <input 
+                        <input
+                            className = "Login-Input" 
                             type="password"
                             name='password'
                             placeholder="   - "
