@@ -352,14 +352,13 @@ span {
 }
 
 .Button-Hide-Projects {
-  background-color: white;
+  background-color: orangered;
   height: 12px;
   margin: 15px 15px 0;
   padding: 20px 15px 29px;;
-  color: orangered;
-  border: white;
-  border-bottom: 4px solid orangered;
-  border-radius: 2px;
+  color: white;
+  border: 4px solid orangered;
+  border-radius: 8px;
   line-height: 15px;
   font-size: 15px;
   width: 150px;
