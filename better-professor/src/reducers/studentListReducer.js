@@ -1,20 +1,8 @@
 import * as actionTypes from '../actions';
 
+
 const initialState = {
-    students: [
-        {
-        name: 'Brainey',
-        projects: 'Learning To Drive 101',
-        date: 'July 6th, 2019',
-        id: 0
-      },
-      {
-        name: '2nd Student',
-        projects: 'This is a Placeholder',
-        date: 'July 7th, 2019',
-        id: 1
-      }
-    ],
+    students: [],
     gettingStudents: false,
     addingStudent: false,
     updatingStudents: false,
@@ -31,6 +19,11 @@ export const studentListReducer = (state = initialState, action) => {
             ...state,
             addingStudent: true,
 
+        }
+        case actionTypes.STUDENT_DATA_GRAB_SUCCESS:
+        return {
+            ...state,
+            students: action.payload
         }
         case actionTypes.CREATE_MESSAGE_START:
         return {
