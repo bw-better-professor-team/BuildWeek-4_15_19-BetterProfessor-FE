@@ -21,6 +21,7 @@ class ProjectDetails extends Component {
                 <h5 className='Project-Item-Deadline'> 
                     Project Deadline: {this.props.project.project_deadline}
                     
+                    
                 </h5>
             </div>
         )

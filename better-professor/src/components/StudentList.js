@@ -40,10 +40,9 @@ class StudentList extends Component {
                     </h1>
                     <div className='Student-List-Header'>
 
-                    <h3>
+                    {/* <h3>
                         Add a Student Here:
                         <form className= 'Student-List-Form' onSubmit={this.submitStudent}>
-                            {/* <label for="name>">Name</label> */}
                             <input 
                                 type="text"
                                 name='name'
@@ -53,7 +52,6 @@ class StudentList extends Component {
                             
                             />
 
-                            {/* <label for="projects>">Password</label> */}
                             <input 
                                 type="text"
                                 name='projects'
@@ -78,7 +76,7 @@ class StudentList extends Component {
                                 
                             </button>
                         </form>
-                    </h3>
+                    </h3> */}
                 </div>
                 <div className='Student-List-Individual-Wrapper'>
                     
