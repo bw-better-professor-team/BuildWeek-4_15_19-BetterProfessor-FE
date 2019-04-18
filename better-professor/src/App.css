@@ -374,3 +374,31 @@ span {
   font-size: 17px;
   cursor: pointer;
 }
+
+.Login-Error {
+  font-size: 16px;
+  color: red;
+}
+
+.Individual-Project-Wrapper{
+  padding: 0 0 10px;
+}
+
+.Project-List-Title {
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.Project-Item-Name {
+  padding: 15px 0 0;
+  margin: 0;
+  font-weight: 500;
+
+}
+
+.Project-Item-Deadline {
+  padding: 5px 0;
+  margin: 0;
+  font-weight: 300;
+}

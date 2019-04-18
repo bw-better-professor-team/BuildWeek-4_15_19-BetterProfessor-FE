@@ -26,12 +26,21 @@ export const loginReducer = (state = initialState, action) => {
             return{
                 ...state,
                 creatingAccount: true,
+                loginError: null
             }
         case actionTypes.CREATE_ACCOUNT_SUCCESS:
 
             return{
                 ...state,
                 creatingAccount: false,
+                loginError: null
+            }
+        case actionTypes.CREATE_ACCOUNT_FAILURE:
+
+            return{
+                ...state,
+                creatingAccount: false,
+                loginError: true
             }
         default:
             return state;

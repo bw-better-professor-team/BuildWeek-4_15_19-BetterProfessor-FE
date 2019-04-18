@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import IndividualStudent from './IndividualStudent'
+import IndividualStudent from './IndividualStudent';
+import requiresAuth from '../auth/requiresAuth';
+import {studentDataGrab} from '../actions';
 
 class StudentList extends Component {
     state = {
@@ -12,7 +14,9 @@ class StudentList extends Component {
             id: ''
         }
     };
-
+    componentDidMount(){
+        this.props.studentDataGrab()
+    }
     handleChange = e => {
         this.setState({
             new_student: {
@@ -77,9 +81,11 @@ class StudentList extends Component {
                     </h3>
                 </div>
                 <div className='Student-List-Individual-Wrapper'>
+                    
                     {this.props.students.map((studentBeingExamined, arrayNumber) =>{
                         return (
-                            <IndividualStudent student = {studentBeingExamined} key = {studentBeingExamined.id} arrayNumber={arrayNumber}/>
+                            <IndividualStudent student = {studentBeingExamined} key = {studentBeingExamined.student_id} arrayNumber={arrayNumber}
+                            firstName = {studentBeingExamined.firstname} />
                         )
                     })}
                  </div>
@@ -100,6 +106,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(StudentList)
-
-
+export default connect(mapStateToProps, { studentDataGrab })(requiresAuth(StudentList))

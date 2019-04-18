@@ -27,9 +27,17 @@ class CreateAccount extends Component {
         e.preventDefault();
         // axios.post('https://betterprofessor.herokuapp.com/api/register', this.state.new_credentials)
         this.props.accountCreation(this.state.new_credentials)
-        .then( () => 
-            this.props.history.push('/login')
-        )
+        // .then(() => new Promise(resolve => setTimeout(resolve, 4000)))
+        .then( (success) => {
+            if(success && !this.props.loginError && !this.props.loggingIn) {
+                this.props.history.push('/login')
+            }
+            else {
+                console.log ('TRY AGAIN, MAN!')
+
+            }
+        })
+        
         // console.log(this.props.loggingIn)
     }
 
@@ -38,7 +46,15 @@ class CreateAccount extends Component {
         return(
             <div className='Login-Form'>
                 <form onSubmit={this.accountCreation}>
-                <h2>Account Creation</h2>
+                    <h2>Account Creation</h2>
+                    <h4 className='Login-Error'>
+                        {this.props.error ? (
+                            'Try a Different Account Name & Password'
+                        ) : (
+                            ''
+                        )}
+                    </h4>
+
                     <div className='Username-Wrapper'>
 
                         <label for="username>">Account</label>

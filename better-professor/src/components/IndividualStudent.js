@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
+import ProjectDetails from './ProjectDetails';
 
 class IndividualStudent extends Component {
     
@@ -44,12 +45,23 @@ class IndividualStudent extends Component {
             <div className='Individual-Student-Wrapper'  >
                 
             
-                <h4>{this.props.student.name}  </h4>
+                <h3>{this.props.student.firstname} {this.props.student.lastname} </h3>
                 <button className="Button-Show-Projects" onClick={this.changeClassList}> Show Projects </button>
                 <div className={"Student-Info Hidden-Display"} >
 
-                
-                    <h5>{this.props.student.projects}</h5>
+
+                    <div className='Individual-Project-Wrapper'>
+                        <h4 className='Project-List-Title'>
+                            Project List
+                        </h4>   
+                        <h5>
+                            {this.props.student.project.map((projectBeingExamined) =>{
+                                return (
+                                    <ProjectDetails project = {projectBeingExamined} projectName = {projectBeingExamined.project_name}/>
+                                )
+                            })}
+                        </h5>
+                    </div >
                     <button className="Button-Hide-Projects" onClick={this.changeClassList}> Hide Projects </button>
                     <div className='Reminder-Button-Wrapper'>
                         <button className="Button-Set-Reminders">
