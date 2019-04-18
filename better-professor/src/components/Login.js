@@ -43,6 +43,7 @@ class Login extends Component {
                     <div className='Username-Wrapper'>
                         <label htmlFor="username>">Account</label>
                         <input 
+                            className = "Login-Input" 
                             type="text"
                             name='username'
                             placeholder="Username"
@@ -54,6 +55,7 @@ class Login extends Component {
                     <div className='Password-Wrapper'>
                         <label htmlFor="password>">Password</label>
                         <input 
+                            className = "Login-Input" 
                             type="password"
                             name='password'
                             placeholder="   - "
