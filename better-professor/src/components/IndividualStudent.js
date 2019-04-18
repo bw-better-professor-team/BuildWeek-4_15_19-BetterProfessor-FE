@@ -3,32 +3,92 @@ import '../App.css';
 import { connect } from 'react-redux';
 
 class IndividualStudent extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
+    
+    state = {
+        message: []
+    };
 
-    //     }
-    // }
+    handleChange = e => {
+        this.setState({
+            
+                ...this.state,
+                message: e.target.value
+            }
+        )
+    };
+
+    submitMessage = e => {
+        e.preventDefault()
+        console.log(this.state.message)
+        
+    }
+
+    changeClassList = e => {
+
+        console.log(this.props.arrayNumber)
+
+        const info = document.querySelectorAll('.Student-Info')
+        const buttons = document.querySelectorAll('.Button-Show-Projects')
+
+        const newArray = Array.from(info)
+        const buttonArray = Array.from(buttons)
+
+        newArray[this.props.arrayNumber].classList.toggle('Hidden-Display')
+        buttonArray[this.props.arrayNumber].classList.toggle('Hidden-Display')
+        console.log(buttonArray[this.props.arrayNumber].classList)
+        
+    }
 
     render () {
         return (
-            <div className='Individual-Student-Wrapper'>
+            <div className='Individual-Student-Wrapper'  >
+                
             
-            
-            <h2>This is an individual student</h2>
-            <h4>{this.props.student.name}</h4>
-            <h5>{this.props.student.projects}</h5>
-            <h5>{this.props.student.date}</h5>
-            <button>
-            Schedule a Reminder for Yourself
+                <h4>{this.props.student.name}  </h4>
+                <button className="Button-Show-Projects" onClick={this.changeClassList}> Show Projects </button>
+                <div className={"Student-Info Hidden-Display"} >
 
-            </button>
-            <button>
-            Schedule a Reminder for the Student
+                
+                    <h5>{this.props.student.projects}</h5>
+                    <button className="Button-Hide-Projects" onClick={this.changeClassList}> Hide Projects </button>
+                    <div className='Reminder-Button-Wrapper'>
+                        <button className="Button-Set-Reminders">
+                        Schedule a Reminder for Yourself
 
-            </button>
-            
-            
+                        </button>
+                        <button className="Button-Set-Reminders">
+                        Schedule a Reminder for the Student
+                        </button>
+                    </div>
+                    <form onSubmit={this.submitMessage}>
+
+                        <div className='Message-Wrapper'>
+                            <label htmlFor="message>">Reminder</label>
+                            <textarea 
+                                rows='4'
+                                cols='50'
+                                type="text"
+                                name='message'
+                                placeholder="Type Reminder Here."
+                                value={this.state.message}
+                                onChange={this.handleChange}
+                            
+                            />
+                        </div>
+
+
+                        <button>
+                            {this.props.creatingReminder ? (
+                                // <Loader type="ThreeDots" colors='#1f2a38' height='12' width='12'/>
+                                'Creating...'
+                            ) : (
+                                'Create Reminder'
+                            )}
+                            
+                        </button>
+                    </form>
+                </div>
+                
             </div>
         )
     }

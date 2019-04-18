@@ -5,7 +5,10 @@ export const  LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 
 export const  CREATE_ACCOUNT_START = 'CREATE_ACCOUNT_START';
 export const  STUDENT_ADDING = 'STUDENT_ADDING';
-export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS'
+export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS';
+export const CREATE_MESSAGE_START = 'CREATE_MESSAGE_START';
+export const MESSAGE_CREATED = 'MESSAGE_CREATED';
+
 
 
 
@@ -35,4 +38,13 @@ export const studentAddition = info => dispatch => {
 
 export const createAccount = creds => dispatch => {
 
+}
+
+export const creatingReminder = creds => dispatch => {
+    dispatch({ type: CREATE_MESSAGE_START });
+    return axios.post('https://betterprofessor.herokuapp.com/api/login', creds)
+    .then(res => {
+        dispatch({ type: MESSAGE_CREATED, payload: res.data.token})
+    }
+    )
 }
