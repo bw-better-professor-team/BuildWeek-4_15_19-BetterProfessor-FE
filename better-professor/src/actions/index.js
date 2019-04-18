@@ -2,6 +2,9 @@ import axios from 'axios';
 
 export const  LOGIN_START = 'LOGIN_START';
 export const  LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const  LOGIN_FAILURE = 'LOGIN_FAILURE';
+
+
 
 export const  CREATE_ACCOUNT_START = 'CREATE_ACCOUNT_START';
 export const  STUDENT_ADDING = 'STUDENT_ADDING';
@@ -20,9 +23,14 @@ export const login = creds => dispatch => {
     .then(res => {
         localStorage.setItem('token',  res.data.token)
         dispatch({ type: LOGIN_SUCCESS, payload: res.data.token})
-        
+        return true
     }
     )
+    .catch(err => {
+        console.log(err)
+        dispatch({ type: LOGIN_FAILURE, payload: err})
+        return false
+    })
 }
 
 export const studentDataGrab = () => dispatch => {
@@ -40,10 +48,12 @@ export const accountCreation = creds => dispatch => {
     .then(res => {
         console.log(res)
         dispatch({ type: CREATE_ACCOUNT_SUCCESS, payload: res.data.payload })
+        return true
     })
     .catch(err => {
         console.log(err)
         dispatch({ type: CREATE_ACCOUNT_FAILURE, payload: err})
+        return false
     })
 }
 
