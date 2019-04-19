@@ -4,7 +4,9 @@ const initialState = {
     token: [],
     loggingIn: false,
     creatingAccount: false,
-    loginError: null
+    accountCreationError: null,
+    loginError: null,
+
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -14,33 +16,54 @@ export const loginReducer = (state = initialState, action) => {
                 ...state,
                 token: [],
                 loggingIn: true,
+                loginError: null,
+                creatingAccount: false,
+                accountCreationError: null,
             }
         case actionTypes.LOGIN_SUCCESS:
             return{
                 ...state,
                 token: [action.payload],
                 loggingIn: false,
+                loginError: null,
+                creatingAccount: false,
+                accountCreationError: null,
+            }
+        case actionTypes.LOGIN_FAILURE:
+            return{
+                ...state,
+                token: [action.payload],
+                loggingIn: false,
+                loginError: true,
+                creatingAccount: false,
+                accountCreationError: null,
             }
         case actionTypes.CREATE_ACCOUNT_START:
         
             return{
                 ...state,
                 creatingAccount: true,
-                loginError: null
+                accountCreationError: null,
+                loggingIn: false,
+                loginError: null,
             }
         case actionTypes.CREATE_ACCOUNT_SUCCESS:
 
             return{
                 ...state,
                 creatingAccount: false,
-                loginError: null
+                accountCreationError: null,
+                loggingIn: false,
+                loginError: null,
             }
         case actionTypes.CREATE_ACCOUNT_FAILURE:
 
             return{
                 ...state,
                 creatingAccount: false,
-                loginError: true
+                accountCreationError: true,
+                loggingIn: false,
+                loginError: null,
             }
         default:
             return state;

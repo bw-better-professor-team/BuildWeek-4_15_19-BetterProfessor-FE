@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {  } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, } from 'react-router-dom';
 import Login from './components/Login';
 import StudentList from './components/StudentList';
 import CreateAccount from './components/CreateAccount';

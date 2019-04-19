@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
 import { login } from '../actions'
-import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -27,19 +26,32 @@ class Login extends Component {
         e.preventDefault();
 
         this.props.login(this.state.credentials)
-        .then( () =>
-            this.props.history.push('/student-list')
-        )
+        .then( (res) => {
+            if(res) {
+                this.props.history.push('/student-list')
+             }
+             else {
+                 console.log(res)
+
+             }
+         })
+
        
     }
-
+    
 
     render() {
         return(
             <div className='Login-Form'>
                 <form onSubmit={this.login}>
                 <h2>Login Now</h2>
-
+                <h4 className='Login-Error'>
+                        {this.props.error ? (
+                            'Incorrect Username or Password'
+                        ) : (
+                            ''
+                        )}
+                    </h4>
                     <div className='Username-Wrapper'>
                         <label htmlFor="username>">Account</label>
                         <input 

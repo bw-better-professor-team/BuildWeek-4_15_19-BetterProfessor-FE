@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import { accountCreation } from '../actions'
-import { Route, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 
 class CreateAccount extends Component {
@@ -25,18 +24,24 @@ class CreateAccount extends Component {
 
     accountCreation = e => {
         e.preventDefault();
-        // axios.post('https://betterprofessor.herokuapp.com/api/register', this.state.new_credentials)
         this.props.accountCreation(this.state.new_credentials)
-        // .then(() => new Promise(resolve => setTimeout(resolve, 4000)))
-        .then( (success) => {
-            if(success && !this.props.loginError && !this.props.loggingIn) {
-                this.props.history.push('/login')
-            }
-            else {
-                console.log ('TRY AGAIN, MAN!')
+        .then( (res) => {
+               if(res) {
+                   this.props.history.push('/login')
+                }
+                else {
+                    console.log(res)
 
-            }
+                }
+            })
+        .catch((err) =>{
+            console.log('Failure')
+            // console.log(err)
+
+
         })
+
+        
         
         // console.log(this.props.loggingIn)
     }
@@ -108,7 +113,7 @@ class CreateAccount extends Component {
 
 const mapStateToProps = (state) => {
     return{
-        error: state.loginReducer.loginError,
+        error: state.loginReducer.accountCreationError,
         loggingIn: state.loginReducer.loggingIn,
         creatingAccount: state.loginReducer.creatingAccount,
     }

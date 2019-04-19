@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import IndividualStudent from './IndividualStudent';
 import requiresAuth from '../auth/requiresAuth';
 import {studentDataGrab} from '../actions';
+import {  Link } from 'react-router-dom';
+
 
 class StudentList extends Component {
     state = {
@@ -31,6 +33,10 @@ class StudentList extends Component {
         this.props.new_student(this.state.new_student);
     }
 
+    clearToken = () => {
+        localStorage.clear();
+    }
+
     render () {
         return (
             <div className='Student-List-Wrapper'>
@@ -38,6 +44,9 @@ class StudentList extends Component {
                         Your Student List
                         
                     </h1>
+
+                    <Link className= "Student-List-Link" onClick={this.clearToken} to="login">Back to Login</Link>
+
                     <div className='Student-List-Header'>
 
                     {/* <h3>
